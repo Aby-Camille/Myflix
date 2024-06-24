@@ -1,3 +1,4 @@
+import { BsBell, BsSearch } from "react-icons/bs";
 import NavbarItem from "./NavbarItem";
 import { FaChevronDown } from "react-icons/fa6";
 
@@ -17,6 +18,14 @@ export default function Navbar() {
                 <div className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
                     <p className="text-white text-sm">Browse</p>
                     <FaChevronDown />
+                </div>
+                <div className="flex flex-row ml-auto gap-7 items-center">
+                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
+                        <BsSearch />
+                    </div>
+                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
+                        <BsBell />
+                    </div>
                 </div>
             </div>
         </nav>
