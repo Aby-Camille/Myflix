@@ -10,6 +10,7 @@ const Billboard = () => {
         <><div className="relative h-[56.25vw]">
             <video className="w-full h-[56.25vw] object-cover brigthness-[60%]"
                 autoPlay
+                loop
                 muted
                 src={data?.videoUrl}>
             </video>
