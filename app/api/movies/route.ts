@@ -6,7 +6,7 @@ export async function GET() {
         const movies = await prismadb.movie.findMany();
         return NextResponse.json(movies);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return NextResponse.json({ error }, { status: 500 });
     }
 }

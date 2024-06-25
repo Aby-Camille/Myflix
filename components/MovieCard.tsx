@@ -6,7 +6,7 @@ interface MovieCardProps {
     movie: Movie,
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+const MovieCard = ({ movie }: MovieCardProps) => {
     function play() {
         console.log(movie);
     }
@@ -30,7 +30,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
                     </p>
 
                     <div className="flex flex-row mt-4 gap-2 items-center">
-                        <p className="">
+                        <p>
                             {movie.duration}
                         </p>
                     </div>

@@ -1,5 +1,6 @@
 import { BsBell, BsSearch } from "react-icons/bs";
 import NavbarItem from "./NavbarItem";
+import Link from 'next/link'
 import { FaChevronDown } from "react-icons/fa6";
 
 export default function Navbar() {
@@ -20,6 +21,7 @@ export default function Navbar() {
                     <FaChevronDown />
                 </div>
                 <div className="flex flex-row ml-auto gap-7 items-center">
+                        <Link href="/login">Login</Link>
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
                         <BsSearch />
                     </div>
