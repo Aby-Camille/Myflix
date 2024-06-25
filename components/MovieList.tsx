@@ -3,19 +3,10 @@
 import React from 'react';
 import useMovieList from '@/app/hooks/useMovieList';
 import MovieCard from '@/components/MovieCard';
+import Movie from '@/models/Movie';
 
 interface MovieListProps {
     title: string;
-}
-
-interface Movie {
-    id: string;
-    title: string;
-    description: string;
-    videoUrl: string;
-    thumbnailUrl: string;
-    genre: string;
-    duration: string;
 }
 
 const MovieList = (props: MovieListProps) => {
@@ -29,7 +20,7 @@ const MovieList = (props: MovieListProps) => {
             </p>
             <div className='grid grid-cols-4 gap-2'>
                 {movies?.map((movie: Movie) => (
-                    <MovieCard key={movie.id} data={movie} />
+                    <MovieCard key={movie.id} movie={movie} />
                 ))}
             </div>
         </div>
