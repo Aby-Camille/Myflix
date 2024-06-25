@@ -24,15 +24,12 @@ const MovieList = (props: MovieListProps) => {
 
     return (
         <div>
-            <p className='text-white text-lg font-bold mb-5'>
+            <p className='text-white text-l font-bold mb-5'>
                 {props.title}
             </p>
             <div className='grid grid-cols-4 gap-2'>
                 {movies?.map((movie: Movie) => (
-                    <MovieCard key={movie.id} data={movie}>
-                        {movie.title}
-                    </MovieCard>
-
+                    <MovieCard key={movie.id} data={movie} />
                 ))}
             </div>
         </div>

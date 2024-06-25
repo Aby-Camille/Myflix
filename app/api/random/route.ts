@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
     try {
+//Collecting amount of movies and genarating random index.
         const movieCount = await prismadb.movie.count();
         const randomIndex = Math.floor(Math.random() * movieCount);
 

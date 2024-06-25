@@ -10,10 +10,13 @@ const Login = () => {
 
     const [variant, setVariant] = useState('login');
 
+// Switch function between login and register.
     const toggleVariant = useCallback(() => {
         setVariant((currentVariant) => currentVariant == 'login' ? 'register' : 'login');
     }, [])
 
+
+// Register function (send POST request to /api/register).
     const register = useCallback(async () => {
         try {
             await axios.post('/api/register', {
