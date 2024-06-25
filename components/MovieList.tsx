@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { isEmpty } from 'lodash';
 import useMovieList from '@/app/hooks/useMovieList';
+import MovieCard from '@/components/MovieCard';
 
 interface MovieListProps {
     title: string;
@@ -29,9 +29,10 @@ const MovieList = (props: MovieListProps) => {
             </p>
             <div className='grid grid-cols-4 gap-2'>
                 {movies?.map((movie: Movie) => (
-                    <div key={movie.id}>
+                    <MovieCard key={movie.id} data={movie}>
                         {movie.title}
-                    </div>
+                    </MovieCard>
+
                 ))}
             </div>
         </div>
