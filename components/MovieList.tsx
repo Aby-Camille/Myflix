@@ -15,7 +15,7 @@ const MovieList = (props: MovieListProps) => {
 
     return (
         <div>
-            <p className='text-white text-l font-bold mb-5'>
+            <p className='text-white text-l font-bold mb-5 mt-5'>
                 {props.title}
             </p>
             <div className='grid grid-cols-4 gap-2'>

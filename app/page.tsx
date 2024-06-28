@@ -9,6 +9,7 @@ export default function Home() {
       <Billboard />
       <div className="pb-40 font-semi-bold pt-4">
         <MovieList title="Trending Now"/>
+        <MovieList title="My List"/>
       </div>
     </main>
   );
