@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Billboard from '@/components/Billboard';
 import MovieList from '@/components/MovieList';
+import { getSession, signOut } from 'next-auth/react';
 
 export default function Home() {
   return (
