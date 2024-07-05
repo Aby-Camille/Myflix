@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
         //Hashing password.
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        //Create new use in the database.
+        //Create new user in the database.
         const user = await prismadb.user.create({
             data: {
                 email,

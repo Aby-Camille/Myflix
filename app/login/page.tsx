@@ -2,6 +2,7 @@
 import axios from "axios";
 import Input from "@/components/Input";
 import { useCallback, useState } from "react";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
     const [name, setName] = useState('');
@@ -28,6 +29,19 @@ const Login = () => {
         }
     }, [email, name, password]);
 
+    const login = useCallback(async() => {
+        try {
+            await signIn('credentials', {
+                email,
+                password,
+                redirect: false,
+                callbackUrl: '/'
+            });
+        } catch(error) {
+            console.error(error);
+        }
+    }, [email, password]);
+
     return (
         <div className = "h-full w-full relative bg-[url('/images/bg-img.jpg')] bg-center bg-cover z-1">
             <div className="bg-black w-full h-full bg-opacity-30">
@@ -46,7 +60,7 @@ const Login = () => {
                             <Input label="Email" onChange={(ev: any) => setEmail(ev.target.value)} id="email" type="email" value={email} />
                             <Input label="Password" onChange={(ev: any) => setPassword(ev.target.value)} id="password" type="password" value={password} />
                         </div>
-                        <button onClick={register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                        <button onClick={variant === 'login' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
                             {variant === 'login' ? 'Login' : 'Sign up'}
                         </button>
                         <p className="text-neutral-500 mt-12">

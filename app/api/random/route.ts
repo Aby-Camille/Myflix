@@ -11,6 +11,7 @@ export async function GET(req: NextRequest) {
             take: 1,
             skip: randomIndex
         });
+        
         return NextResponse.json(randomMovies[0]);
     } catch (error) {
         console.log(error);
