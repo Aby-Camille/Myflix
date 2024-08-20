@@ -1,26 +1,21 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
-interface ModalProps {
-    isOpen: boolean;
-    hasCloseBtn?: boolean;
-    onClose?: () => void;
-    children: React.ReactNode;
-  };
 
-  const Modal: React.FC<ModalProps> = ({ isOpen, hasCloseBtn, onClose, children }) => {
-    const [isModalOpen, setModalOpen] = useState(isOpen);
-    const modalRef = useRef<HTMLDialogElement | null>(null);
-    
-    useEffect(() => {
-      setModalOpen(isOpen);
-    }, [isOpen]);
-    
+export default function Modal() {
+
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+      setModal(!modal)
+    }
+  
     return (
-      <dialog ref={modalRef} className="modal">
-        {children}
-      </dialog>
+      <>
+        <button onClick={toggleModal}>
+          Open
+        </button>
+      </>
     );
   };
 
-export default Modal;
