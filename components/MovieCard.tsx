@@ -26,7 +26,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                         onClick={play}>
                             <BsFillPlayFill size={30} />
                         </button>
-                        <FavoriteButton movieId={movie?.id}/>
+                        <FavoriteButton movieId={movie?.id} />
                         <Modal />
                     </div>
                     <p className="text-green-400 font-semibold mt-4">
