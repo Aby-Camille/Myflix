@@ -17,8 +17,8 @@ export default function Modal() {
           <FaInfo size={15} />
         </button>
 
-        <div className="fixed top-0 right-0 left-0 bottom-0 h-screen w-screen">
-          <div className="top-0 right-0 left-0 bottom-0 w-screen h-screen bg-black bg-opacity-50"></div>
+        <div className="fixed -top-100 -left-20 w-screen h-screen">
+          <div className="w-screen h-screen bg-black bg-opacity-50"></div>
           <div className="absolute">
             <p>description</p>
             <button>Close</button>
