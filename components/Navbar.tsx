@@ -2,11 +2,25 @@ import { BsBell, BsSearch } from "react-icons/bs";
 import NavbarItem from "./NavbarItem";
 import Link from 'next/link'
 import { FaChevronDown } from "react-icons/fa6";
+import { useState } from "react";
 
 export default function Navbar() {
+
+    //scroll to change navbar color opacity
+    const [color, setColor] = useState(false)
+    const changeColor = () => {
+        if (window.scrollY >= 90) {
+            setColor(true)
+        } else {
+            setColor(false)
+        }    
+    }
+
+    window.addEventListener('scroll', changeColor)
+
     return (
         <nav className="w-full sticky z-20">
-            <div className="px-4 fixed w-full md:px-16 py-6 flex flex-row items-center transition duration-500 bg-zinc-900 bg-opacity-90">
+            <div className={color ? "px-4 fixed w-full md:px-16 py-6 flex flex-row items-center transition duration-500 bg-zinc-900 bg-opacity-90" : "px-4 fixed w-full md:px-16 py-6 flex flex-row items-center transition duration-500 bg-zinc-900 bg-opacity-40"}>
                 <img className="h-4 lg:h-14" src="/images/logo.png" alt="netflix logo"/>
                 <div className="flex-row ml-8 gap-7 hidden lg:flex">
                     <NavbarItem label="Home" />
