@@ -1,8 +1,10 @@
+'use client';
+
 import { BsBell, BsSearch } from "react-icons/bs";
 import NavbarItem from "./NavbarItem";
 import Link from 'next/link'
 import { FaChevronDown } from "react-icons/fa6";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
 
@@ -16,7 +18,11 @@ export default function Navbar() {
         }    
     }
 
-    window.addEventListener('scroll', changeColor)
+    
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeColor)
+    })
 
     return (
         <nav className="w-full sticky z-20">

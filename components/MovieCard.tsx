@@ -1,6 +1,6 @@
 import Movie from '@/models/Movie';
 import { BsFillPlayFill } from 'react-icons/bs';
-
+import { FaInfo } from 'react-icons/fa';
 import FavoriteButton from '@/components/FavoriteButton';
 import Modal from '@/components/Modal';
 
@@ -27,6 +27,9 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                             <BsFillPlayFill size={30} />
                         </button>
                         <FavoriteButton movieId={movie?.id} />
+                        <button className="cursor-pointer group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
+                            <FaInfo size={15} />
+                         </button>
                         <Modal />
                     </div>
                     <p className="text-green-400 font-semibold mt-4">
