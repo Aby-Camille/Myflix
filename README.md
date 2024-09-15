@@ -1,6 +1,9 @@
+## Myflix
 🚧 Currently under construction 🚧
 
-## Myflix is a personal project built with Next.js
+Création d'une plateforme de streaming de type Media center
+
+Personal project built with Next.js (React, TypeScript, Node, Tailwind CSS)
 
 ![image](https://github.com/Aby-Camille/Myflix/blob/4d92e23b6b0b16f5e5aa48835f660838098cc5e5/public/images/myflix_cover.png)
 
