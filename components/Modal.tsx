@@ -1,30 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
-export default function Modal() {
+interface Props {
+  opened: boolean,
+  closing: Function
+}
 
-    const open = () => {
-      const dialog: HTMLDialogElement | null = document.querySelector('dialog');
+export default function Modal({ opened, closing }: Props) {
+
+  useEffect(() => {  
+    const dialog: HTMLDialogElement | null = document.querySelector('dialog');
+    console.log(opened);
+    
+    if (opened) {
       dialog?.showModal();
+      return;
     }
 
-    const close = () => {
-      const dialog: HTMLDialogElement | null = document.querySelector('dialog');
-      dialog?.close();
-    }
+    dialog?.close();
+  }, [opened])
+
+  function close() {
+    closing();
+    const dialog: HTMLDialogElement | null = document.querySelector('dialog');
+    dialog?.close();
+  }
   
     return (
-      
-      <dialog className="bg-black bg-opacity-50">
-        <header>
+      <dialog className="bg-black bg-opacity-50 text-white">
+        <header className="flex justify-between items-center">
           <p>description</p>
-          <button>Close</button>
+          <button onClick={close}>Close</button>
         </header>
         <div>
           des trucs
         </div>
-        <footer>
-          footer
-        </footer>
       </dialog>
     );
   };
