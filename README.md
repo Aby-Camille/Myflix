@@ -1,7 +1,7 @@
 ## Myflix 
 🚧 Currently under construction 🚧
 
-Création d'une plateforme de streaming de type Media center 
+Création d'une plateforme de streaming de type Media center
 
 Personal project built with Next.js (React, TypeScript, Node, Tailwind CSS)
 
