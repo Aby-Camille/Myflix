@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { MdClose } from "react-icons/md";
 
 interface Props {
   opened: boolean,
@@ -29,7 +30,7 @@ export default function Modal({ opened, closing }: Props) {
       <dialog className="bg-black bg-opacity-50 text-white">
         <header className="flex justify-between items-center">
           <p>description</p>
-          <button onClick={close}>Close</button>
+          <button onClick={close}><MdClose size={15}/></button>
         </header>
         <div>
           des trucs
